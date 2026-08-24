@@ -1,6 +1,6 @@
 import imageio.v3 as imgio
 
-filenames  = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg']
+filenames  = ['imgs/1.jpg', 'imgs/2.jpg', 'imgs/3.jpg', 'imgs/4.jpg']
 imgs = []
 
 def create_gif():
