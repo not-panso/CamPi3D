@@ -6,7 +6,7 @@ imgs = []
 def create_gif():
     for filename  in filenames:
         imgs.append(imgio.imread(filename))
-
-    imgio.imwrite('3D.gif', imgs, duration = 120, loop = 0)
+    loop_imgs = imgs + imgs[-2:0:-1]
+    imgio.imwrite('3D.gif', loop_imgs, duration = 120, loop = 0)
 
 create_gif()
