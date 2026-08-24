@@ -1,9 +1,11 @@
 import imageio.v3 as imgio
-from os import listdir
+from os import listdir, path, makedirs
 
-filenames  = ['imgs/1.jpg', 'imgs/2.jpg', 'imgs/3.jpg', 'imgs/4.jpg']
+imgs_dir = 'CamPi/Images'
+gifs_dir = 'CamPi/GIFs'
+filenames  = [f'{imgs_dir}/1.jpg', f'{imgs_dir}/2.jpg', f'{imgs_dir}/3.jpg', f'{imgs_dir}/4.jpg']
 imgs = []
-files_num = listdir('GIFs')
+files_num = listdir(gifs_dir)
 gif_num = []
 
 for files in files_num:
@@ -12,11 +14,17 @@ for files in files_num:
 
 gif_name = len(gif_num) + 1
 
+if not path.exists('CamPi'):
+    makedirs('CamPi')
+if not path.exists(imgs_dir):
+    makedirs(imgs_dir)
+if not path.exists(gifs_dir):
+    makedirs(gifs_dir)
 
 def create_gif():
     for filename  in filenames:
         imgs.append(imgio.imread(filename))
     loop_imgs = imgs + imgs[-2:0:-1]
-    imgio.imwrite(f'GIFs/{gif_name}.gif', loop_imgs, duration = 120, loop = 0)
+    imgio.imwrite(f'{gifs_dir}/{gif_name}.gif', loop_imgs, duration = 120, loop = 0)
 
 create_gif()
