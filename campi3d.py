@@ -13,7 +13,7 @@ open(f'{imgs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE', 'w').close() # Warning f
 open(f'{gifs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE', 'w').close() # Warning file for gifs directory
 
 with open(f'{usb_dir}/README.txt', 'w') as f:
-    f.write("You do not edit the files present in the Images and GIFs folders. You can copy them elsewhere, delete them but don't modify them and preferably don't add anything there although the project does include protection to that and shouldn't affect anything.")
+    f.write("This folder is used by CamPi3D, a Raspberry Pi camera project that saves photos and generates GIFs here. Please don't modify, rename, or add files in the Images or GIFs folders, since GIF numbering depends on what's already in the GIFs folder and unexpected files can cause names to overlap or GIFs to overwrite each other. You're welcome to copy or delete the files, just don't edit or add to them directly.")
 
 filenames  = [f'{imgs_dir}/1.jpg', f'{imgs_dir}/2.jpg', f'{imgs_dir}/3.jpg', f'{imgs_dir}/4.jpg'] # List of filenames of the pictures taken
 imgs = []
