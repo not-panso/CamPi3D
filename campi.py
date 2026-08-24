@@ -1,6 +1,5 @@
 import imageio.v3 as imgio
 from os import listdir
-import random
 
 filenames  = ['imgs/1.jpg', 'imgs/2.jpg', 'imgs/3.jpg', 'imgs/4.jpg']
 imgs = []
