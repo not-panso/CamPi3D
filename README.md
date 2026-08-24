@@ -1,7 +1,6 @@
 # CamPi
-3D Camera made with Raspberrry Pi
+A DIY 3D camera project for the Raspberry Pi which uses 4 camera modules to snap 4 different images (**almost**) simultaniously and stich them into a `.gif` file.
 
----
 # Requirements
 - Raspberry Pi 3B (Haven't been tested with other models because I don't own any other models)
 - MicroSD
@@ -10,6 +9,9 @@
 - Camera Hat (problably [https://www.arducam.com/arducam-8mp-4-quadrascopic-camera-bundle-kit-b0396.html](this one) but WIP)
 - Flash
 - Button
+- 3D Printed enclosure (will post the [https://printables.com](Printables) link when I have it done 
+
+---
 
 # Current roadmap for me
 This is everything I need to get assesed before I can actually start making this project
@@ -22,3 +24,14 @@ This is everything I need to get assesed before I can actually start making this
   - [ ] Flash
   - [ ] Button
 - [ ] Code (WIP)
+- [ ] Enclosure
+
+## Everything that has been implemented in the code yet
+- [ ] Taking pictures
+- [x] Making the `.gif` from the 4 images
+- [ ] Moving it to the USB
+
+---
+
+# Power problem
+The only problem with it is that when I make it, it will be powered by a powerbank because I don't have the budget for a Raspberry Pi battery. That is the only part I won't be documenting and you will be on your own on choosing the correct battery and adding it to the project while also adapting the 3D model enclosure files accordingly.
