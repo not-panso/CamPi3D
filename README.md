@@ -6,7 +6,7 @@ A DIY 3D camera project for the Raspberry Pi which uses 4 camera modules to snap
 - MicroSD
 - USB ==of any size== (the amount of images you take is dependant on the size of the USB)
 - Camera modules (probably the IMX219 but it is still WIP)
-- Camera Hat (problably [https://www.arducam.com/arducam-8mp-4-quadrascopic-camera-bundle-kit-b0396.html](this one) but WIP)
+- Camera Hat (problably [https://www.arducam.com/arducam-8mp-4-quadrascopic-camera-bundle-kit-b0396.html](this) one but WIP)
 - Flash
 - Button
 - 3D Printed enclosure (will post the [https://printables.com](Printables) link when I have it done 
