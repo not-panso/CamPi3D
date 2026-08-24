@@ -29,7 +29,7 @@ This is everything I need to get assesed before I can actually start making this
 ## Everything that has been implemented in the code yet
 - [ ] Taking pictures
 - [x] Making the `.gif` from the 4 images
-~~~- [ ] Moving it to the USB~~~
+~~- [ ] Moving it to the USB~~
 - [x] Creating necessary folders to save the gifs and the images alongside with the needed warnings
 
 ---
