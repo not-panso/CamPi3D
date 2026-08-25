@@ -1,8 +1,8 @@
-import imageio.v3 as imgio
-from os import listdir, path, makedirs
+import imageio.v3 as iio
+from os import listdir, path, makedirs, remove
 
 # Finding if there is a usb and using the appropriate directory
-mountpoint = '' # Rememeber to set it to your default usb mountpoint
+mountpoint = '/run/media/panso' # Rememeber to change to /media/campi when done testing in own machine
 mounts = listdir(mountpoint) 
 if mounts:
     abc_mounts = sorted(mounts)
@@ -46,10 +46,10 @@ if mounts:
 
     def create_gif(): # Creating the gif 
         for filename  in filenames:
-            imgs.append(imgio.imread(filename))
+            imgs.append(iio.imread(filename))
         loop_imgs = imgs + imgs[-2:0:-1]
         print('Generating GIF...')
-        imgio.imwrite(f'{gifs_dir}/{gif_name}.gif', loop_imgs, duration = 120, loop = 0)
+        iio.imwrite(f'{gifs_dir}/{gif_name}.gif', loop_imgs, duration = 120, loop = 0)
         print('GIF generated!')
         print('Deleting images...')
         for filename in filenames:
@@ -59,4 +59,3 @@ if mounts:
     create_gif()
 else:
     print('No USB found. Exiting...')
-    
