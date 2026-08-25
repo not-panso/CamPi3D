@@ -50,7 +50,13 @@ if mounts:
         loop_imgs = imgs + imgs[-2:0:-1]
         print('Generating GIF...')
         imgio.imwrite(f'{gifs_dir}/{gif_name}.gif', loop_imgs, duration = 120, loop = 0)
+        print('GIF generated!')
+        print('Deleting images...')
+        for filename in filenames:
+            remove(filename)
+        print('Images deleted!')
 
     create_gif()
 else:
     print('No USB found. Exiting...')
+    
