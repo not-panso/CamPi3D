@@ -17,13 +17,22 @@ if mounts:
     print('GIFs directory created or it already exists')
 
     # Creating the warning files needed
-    open(f'{imgs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE', 'w').close() # Warning file for images directory
-    print('Created Images warning file')
-    open(f'{gifs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE', 'w').close() # Warning file for gifs directory
-    print('Created GIFs warning file')
-    with open(f'{usb_dir}/README.txt', 'w') as f: # Creating the README.txt file
-        f.write("This folder is used by CamPi3D, a Raspberry Pi camera project that saves photos and generates GIFs here. Please don't modify, rename, or add files in the Images or GIFs folders, since GIF numbering depends on what's already in the GIFs folder and unexpected files can cause names to overlap or GIFs to overwrite each other. You're welcome to copy or delete the files, just don't edit or add to them directly.")
-        print('Created README.txt')
+    if path.isfile(f'{imgs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE'):
+        print('Images warning file already exists')
+    else: 
+        open(f'{imgs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE', 'w').close() # Warning file for images directory
+        print('Created Images warning file')
+    if path.isfile(f'{gifs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE'):
+        print('GIFs warning file already exists')
+    else: 
+        open(f'{gifs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE', 'w').close() # Warning file for gifs directory
+        print('Created GIFs warning file')
+    if path.isfile(f'{usb_dir}/README.txt'):
+        print('README.txt already exists')
+    else: 
+        with open(f'{usb_dir}/README.txt', 'w') as f: # Creating the README.txt file
+            f.write("This folder is used by CamPi3D, a Raspberry Pi camera project that saves photos and generates GIFs here. Please don't modify, rename, or add files in the Images or GIFs folders, since GIF numbering depends on what's already in the GIFs folder and unexpected files can cause names to overlap or GIFs to overwrite each other. You're welcome to copy or delete the files, just don't edit or add to them directly.")
+            print('Created README.txt')
 
     # Managing the files
     filenames  = [f'{imgs_dir}/1.jpg', f'{imgs_dir}/2.jpg', f'{imgs_dir}/3.jpg', f'{imgs_dir}/4.jpg'] # List of filenames of the pictures taken
@@ -39,9 +48,9 @@ if mounts:
         for filename  in filenames:
             imgs.append(imgio.imread(filename))
         loop_imgs = imgs + imgs[-2:0:-1]
+        print('Generating GIF...')
         imgio.imwrite(f'{gifs_dir}/{gif_name}.gif', loop_imgs, duration = 120, loop = 0)
 
     create_gif()
 else:
     print('No USB found. Exiting...')
-    
