@@ -1,8 +1,14 @@
 import imageio.v3 as imgio
 from os import listdir, path, makedirs
 
+# Finding if there is a usb and using the appropriate directory
+mountpoint = '' # Rememeber to set it to your default usb mountpoint
+mounts = listdir(mountpoint) 
+if mounts:
+    abc_mounts = sorted(mounts)
+    usb_dir = f'{mountpoint}/{abc_mounts[0]}/CamPi3D'
+
 # Making the required directories
-usb_dir = 'CamPi3D'
 imgs_dir = f'{usb_dir}/Images' # Directory where the original images where taken
 gifs_dir = f'{usb_dir}/GIFs' # Directory where the gif is created from the above images
 makedirs(imgs_dir, exist_ok=True)
@@ -12,7 +18,7 @@ makedirs(gifs_dir, exist_ok=True)
 open(f'{imgs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE', 'w').close() # Warning file for images directory
 open(f'{gifs_dir}/DO NOT ADD OR MODIFY ANY FILES HERE', 'w').close() # Warning file for gifs directory
 
-with open(f'{usb_dir}/README.txt', 'w') as f:
+with open(f'{usb_dir}/README.txt', 'w') as f: # Creating the README.txt file
     f.write("This folder is used by CamPi3D, a Raspberry Pi camera project that saves photos and generates GIFs here. Please don't modify, rename, or add files in the Images or GIFs folders, since GIF numbering depends on what's already in the GIFs folder and unexpected files can cause names to overlap or GIFs to overwrite each other. You're welcome to copy or delete the files, just don't edit or add to them directly.")
 
 filenames  = [f'{imgs_dir}/1.jpg', f'{imgs_dir}/2.jpg', f'{imgs_dir}/3.jpg', f'{imgs_dir}/4.jpg'] # List of filenames of the pictures taken
@@ -34,3 +40,4 @@ def create_gif(): # Creating the gif
     imgio.imwrite(f'{gifs_dir}/{gif_name}.gif', loop_imgs, duration = 120, loop = 0)
 
 create_gif()
+
