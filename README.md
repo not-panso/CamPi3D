@@ -13,6 +13,11 @@ A DIY 3D camera project for the Raspberry Pi which uses 4 camera modules to snap
 
 ---
 
+# **Installation**
+The installation and how to get the project set up won't be documented until I have the taking the pictures aspect ready. Once I have that ready (which means getting the camera modules and the camera hat) and implementing the code, then I will document how to install the project.
+
+---
+
 # Current roadmap for the project 
 This is everything I need to get assesed before I can actually start making this project
 - [ ] Hardware
